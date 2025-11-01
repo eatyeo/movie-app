@@ -6,7 +6,7 @@ Clone this repository to your local machine using Git:
 
 `git clone https://github.com/appwrite/starter-for-react`
 
-## Development guid
+## Development guide
 1. **Configure Appwrite**<br/>
    Navigate to `.env` and update the values to match your Appwrite project credentials.
 2. **Customize as needed**<br/>
