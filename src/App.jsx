@@ -6,8 +6,7 @@ import MovieCard from './components/MovieCard'
 import Spinner from './components/Spinner'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
-
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const API_OPTIONS = {
   method: 'GET',
@@ -42,14 +41,16 @@ const App = () => {
         return;
       }
       setMovieList(data.results || []);
-
   } catch (error) {
-      console.error(`Error fetching movies. Please try again later.`);
+      console.error('Error fetching movies:', error);
+      setErrorMessage('Error fetching movies. Please try again later.');
   } finally {
     setIsLoading(false);
   }
+}
 
   useEffect(() => {
+    fetchMovies();
   }, [])
 
   return (
@@ -57,7 +58,7 @@ const App = () => {
       <div className="pattern">
       <div className="wrapper">
         <header>
-          <img src="./hero.png" alt="Hero Banner" />
+          <img src="./movie-logo-1.png" alt="Movie Logo" />
           <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle</h1>
           
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -65,7 +66,6 @@ const App = () => {
 
         <section className="all-movies">
           <h2 className="mt-[40px]">All Movies</h2>
-
           {isLoading ? (
             <Spinner />
           ) : errorMessage ? (
@@ -83,5 +83,5 @@ const App = () => {
     </main>
   )
 }
-}
+
 export default App
