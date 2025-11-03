@@ -29,21 +29,28 @@ It displays a curated list of popular movies and lets users search for titles qu
 ```bash
 git clone https://github.com/eatyeo/movie-finder-app.git
 cd movie-finder-app
+```
 
 ### 2. Install Dependencies
+```bash
 npm install
+```
 
 ### 3. Add Your TMDB API Key
 Create a `.env` file in the root of the project and add:
+```bash
 VITE_TMDB_API_KEY=YOUR_TMDB_API_READ_ACCESS_TOKEN
+```
 
 Use the TMDB Read Access Token (Bearer token), not the simple API key.
 Get it from: https://www.themoviedb.org/settings/api
 
 ### 4. Run the Development Server
+```bash
 npm run dev
+```
 Open in your browser:
-http://localhost:___/
+http://localhost:<your-port>
 
 ---
 
