@@ -17,14 +17,18 @@
 
   --breakpoint-xs: 480px;
 
-  --background-image-hero-pattern: url("/hero-bg.png");
+  --background-image-hero-pattern: url("/hero-bg.svg");
 }
 
 @layer base {
   body {
     font-family: "DM Sans", serif;
     font-optical-sizing: auto;
-    background: #030014;
+    background: var(--background-image-hero-pattern) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
   }
 
   h1 {
