@@ -17,18 +17,17 @@
 
   --breakpoint-xs: 480px;
 
-  --background-image-hero-pattern: url("/hero-bg.svg");
+  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 @layer base {
+  html, body {
+    @apply min-h-screen bg-primary;
+  }
+
   body {
     font-family: "DM Sans", serif;
     font-optical-sizing: auto;
-    background: var(--background-image-hero-pattern) no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh; /* Ensure the body covers the full viewport height */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
   }
 
   h1 {
@@ -54,13 +53,13 @@
 
 @layer components {
   .pattern {
-    @apply bg-hero-pattern w-full h-screen bg-center bg-cover absolute z-0;
+    @apply bg-hero-pattern w-full h-[600px] bg-center bg-cover absolute top-0 left-0 z-0;
   }
 
   .wrapper {
-    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10 pt-[650px];
   }
-
+  
   .trending {
     @apply mt-20;
 
