@@ -3,9 +3,6 @@ A modern and lightweight movie discovery web app built with **React**, powered b
 
 Users can browse popular titles, search for movies in real-time (with **debounced input** to reduce API calls), and view trending movies based on the **most-searched exact matches** across the app. The UI is clean, responsive, and fast.
 
-## Preview
-![App Screenshot 1](./public/preview.png)
-
 ## Features
 - Browse currently **popular** movies
 - **Search** for movies by title with optimized debounced input
@@ -13,6 +10,9 @@ Users can browse popular titles, search for movies in real-time (with **debounce
 - **Trending section** powered by Appwrite (ranks movies by exact-match search frequency)
 - Responsive UI with **Tailwind CSS**
 - Loading indicators + error handling for smooth UX
+
+## Preview
+![App Screenshot](./public/preview.png)
 
 ## Tech Stack
 - React
