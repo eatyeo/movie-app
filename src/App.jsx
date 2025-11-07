@@ -54,7 +54,12 @@ const App = () => {
       setMovieList(data.results || []);
 
       if(query && data.results.length > 0) {
-        await updateSearchCount(query, data.results[0]);
+        const topResult = data.results[0];
+        // Only update count if the search query is an exact match for the top result's title
+        if (query.toLowerCase() === topResult.title.toLowerCase()) {
+          await updateSearchCount(topResult);
+          await loadTrendingMovies();
+        }
       }
   } catch (error) {
       console.error('Error fetching movies:', error);
@@ -99,7 +104,7 @@ const App = () => {
                 {trendingMovies.map((movie, index) => (
                   <li key={movie.$id}>
                     <p>{index + 1}</p>
-                    <img src={movie.poster_url} alt={movie.title} />
+                    <img src={movie.poster_url} alt={movie.searchTerm} />
                   </li>
                 ))}
               </ul>

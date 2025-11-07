@@ -12,11 +12,11 @@ client
 
 const database = new Databases(client);
 
-export const updateSearchCount = async (searchTerm, movie) => {
+export const updateSearchCount = async (movie) => {
     try {
-        // 1. Use Appwrite SDK to check if the search term already exists in the database
+        // 1. Use Appwrite SDK to check if the movie ID already exists in the database
         const result = await database.listDocuments(DATABASE_ID, TABLE_ID, [
-            Query.equal('searchTerm', searchTerm)
+            Query.equal('movie_id', movie.id)
         ]);
 
         // 2. If it exists, increment the count field by 1
@@ -29,7 +29,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
         // 3. If it does not exist, create a new record with count initialized to 1
         } else {
             await database.createDocument(DATABASE_ID, TABLE_ID, ID.unique(), {
-                searchTerm,
+                searchTerm: movie.title, // Use the canonical movie title
                 count: 1,
                 movie_id: movie.id,
                 poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
