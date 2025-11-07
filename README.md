@@ -1,18 +1,15 @@
 # Movie Finder App
-A modern and lightweight movie discovery web app built with **React**, powered by **The Movie Database (TMDB)**, and enhanced with **Appwrite** for storing trending search data.
+A movie discovery web app built with React, the TMDB API, and Tailwind CSS. It uses Appwrite as a backend to track and rank user search queries for a "Trending" section.
 
-Users can browse popular titles, search for movies in real-time (with **debounced input** to reduce API calls), and view trending movies based on the **most-searched exact matches** across the app. The UI is clean, responsive, and fast.
+The app allows users to browse popular titles, search for movies in real-time, and see which movies are being searched for most by other users.
 
 ## Features
-- Browse currently **popular** movies
-- **Search** for movies by title with optimized debounced input
-- Displays movie poster, rating, language, and release year
-- **Trending section** powered by Appwrite (ranks movies by exact-match search frequency)
-- Responsive UI with **Tailwind CSS**
-- Loading indicators + error handling for smooth UX
-
-## Preview
-![App Screenshot](./public/preview.png)
+- Browse popular movies
+- Search with debounced input
+- View poster, rating, language, and release year
+- Trending section ranks exact-match searches
+- Responsive UI with Tailwind CSS
+- Loading indicators and error handling
 
 ## Tech Stack
 - React
@@ -49,15 +46,10 @@ VITE_APPWRITE_TABLE_ID=YOUR_APPWRITE_TABLE_ID
 ```bash
 npm run dev
 ```
-- Open in your browser:
-- `http://localhost:<your-port>`
+- Open in your browser: `http://localhost:<your-port>`
 
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
+## Preview
+![App Screenshot](./public/preview.png)
 
 ## Acknowledgements
 - Movie data provided by The Movie Database (TMDB) — https://www.themoviedb.org/
